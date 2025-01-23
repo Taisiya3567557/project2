@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вычисление дискриминанта</title>
+</head>
+<body>
+    <h1>Квадратное уравнение</h1>
+    <p>Введите коэффициенты для уравнения ax² + bx + c = 0</p>
+
+    <label for="a">Коэффициент a:</label>
+    <input type="number" id="a" required>
+    <br><br>
+    
+    <label for="b">Коэффициент b:</label>
+    <input type="number" id="b" required>
+    <br><br>
+    
+    <label for="c">Коэффициент c:</label>
+    <input type="number" id="c" required>
+    <br><br>
+
+    <button onclick="calculateDiscriminant()">Вычислить дискриминант</button>
+
+    <script>
+        function calculateDiscriminant() {
+            // Получить значения коэффициентов из полей ввода
+            let a = parseFloat(document.getElementById("a").value);
+            let b = parseFloat(document.getElementById("b").value);
+            let c = parseFloat(document.getElementById("c").value);
+
+            // Проверить, что все коэффициенты введены
+            if (isNaN(a) || isNaN(b) || isNaN(c)) {
+                alert("Пожалуйста, введите все коэффициенты.");
+                return;
+            }
+
+            // Вычислить дискриминант
+            let discr = b * b - 4 * a * c;
+
+            // Вывести дискриминант
+            alert("Дискриминант D = " + discr.toString());
+        }
+    </script>
+</body>
+</html>

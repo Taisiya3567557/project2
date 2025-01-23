@@ -3,44 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Вычисление дискриминанта</title>
+    <title>Задача на логику</title>
 </head>
 <body>
-    <h1>Квадратное уравнение</h1>
-    <p>Введите коэффициенты для уравнения ax² + bx + c = 0</p>
+    <h1>Логическая задача</h1>
+    <p>Охранник сказал: "Девять". Сколько нужно ответить?</p>
 
-    <label for="a">Коэффициент a:</label>
-    <input type="number" id="a" required>
-    <br><br>
-    
-    <label for="b">Коэффициент b:</label>
-    <input type="number" id="b" required>
-    <br><br>
-    
-    <label for="c">Коэффициент c:</label>
-    <input type="number" id="c" required>
-    <br><br>
-
-    <button onclick="calculateDiscriminant()">Вычислить дискриминант</button>
+    <button onclick="calculateAnswer()">Посчитать ответ</button>
+    <p id="result"></p>
 
     <script>
-        function calculateDiscriminant() {
-            // Получить значения коэффициентов из полей ввода
-            let a = parseFloat(document.getElementById("a").value);
-            let b = parseFloat(document.getElementById("b").value);
-            let c = parseFloat(document.getElementById("c").value);
+        function calculateAnswer() {
+            const number = 9; // Число, которое сказал охранник
+            const hits = 3;   // Количество постукиваний
+            const answer = number - hits; // Разница между числом и постукиваниями
 
-            // Проверить, что все коэффициенты введены
-            if (isNaN(a) || isNaN(b) || isNaN(c)) {
-                alert("Пожалуйста, введите все коэффициенты.");
-                return;
-            }
-
-            // Вычислить дискриминант
-            let discr = b * b - 4 * a * c;
-
-            // Вывести дискриминант
-            alert("Дискриминант D = " + discr.toString());
+            document.getElementById("result").innerText = "Ответ: " + answer;
         }
     </script>
 </body>
